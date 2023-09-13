@@ -1,5 +1,6 @@
-# MEDIAS QUERIDADES
+# MEDIAS QUERIES
 
+![Media Queries](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo2/Imagenes/media-queries-blog.jpeg)
 
 CSS dispone desde hace tiempo de una forma de servir diferentes estilos a diferentes tipos de medios, utilizando el atributo media del elemento link:
 
@@ -206,6 +207,7 @@ elimina la posición flotante y los elementos li se apilan verticalmente.
 
 Como sólo hay dos valores posibles para la función de orientación, si aplica reglas diferenciadoras utilizando un valor, el otro se convierte tácitamente en el 
 opuesto. 
+
 
 ## Relación de aspecto
 
