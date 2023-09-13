@@ -85,7 +85,8 @@ de longitud:
 En este caso, las reglas se aplican sólo a los navegadores que están configurados para tener exactamente 600px de ancho, lo que probablemente es demasiado
 específico. width también acepta uno de dos prefijos, max- y min-, lo que permite comprobar una anchura mínima o máxima:
 
-     @media (max-width: 480px) { rules } @media (min-width: 640px) { rules }
+     @media (max-width: 480px) { rules } 
+     @media (min-width: 640px) { rules }
 
 La primera consulta aplica las reglas en navegadores que no superan los 480px de ancho, y la segunda en navegadores que tienen al menos 640px de ancho.
 Veamos un ejemplo práctico. En este caso, aprovecharé el tamaño de las ventanas de los navegadores con una cabecera decorativa para las ventanas más anchas
