@@ -2,24 +2,24 @@
 /* Es decir, lo ejecuta a partir de 768px en adelante */
 @media screen and (min-width:768px) { 
     .logo {
-          width:120px;
-          height:auto;
-      }
-  }
+        width:120px;
+        height:auto;
+    }
+}
 
 
 /* Ejecuta estas condiciones CSS para resoluciones entre 1023 y 1280px*/
 @media screen and (min-width:1023px) and (max-width:1279px) {
-	#footer a {
-		padding-bottom:10px
-	}
+    #footer a {
+        padding-bottom:10px
+    }
 }
 
 /* Ejecuta el CSS en pantalas cuya ancho tenga como máximo 420px */
 /* Es decir, lo ejecuta hasta resoluciones de 420px */
 @media screen and (max-width:420px) {
-	h1 {
-		font-size:0.8rem;
-    	color: #10ec89;
-  	}
+    h1 {
+        font-size:0.8rem;
+        color: #10ec89;
+    }
 }
