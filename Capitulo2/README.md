@@ -94,16 +94,16 @@ Veamos un ejemplo práctico. En este caso, aprovecharé el tamaño de las ventan
 (se han omitido algunas reglas para mayor claridad):
 
      @media (min-width: 400px) {
-      h1 { background: url('landscape.jpg'); }
-    }
+         h1 { background: url('landscape.jpg'); }
+     }
 Esta consulta de medios comprueba si las ventanas del navegador tienen al menos 400px de ancho y aplica una imagen de fondo al elemento h1 cuando es así.
 
 La función de medios de altura funciona de la misma manera, salvo que se dirige a los navegadores en función de su altura en lugar de su anchura. La sintaxis es 
 la misma que la de anchura y también permite utilizar prefijos max- y min-:
 
      @media (altura: valor) { reglas }
-     @media (max-height: value) { rules } @media (min-height: value) { rules }
-
+     @media (max-height: value) { rules } 
+     @media (min-height: value) { rules }
 
 Sin embargo, debido a la prevalencia del desplazamiento vertical, la altura se utiliza con mucha menos frecuencia que la anchura.
 
@@ -139,8 +139,9 @@ Al igual que con las demás funciones multimedia, también puede detectar las re
 Esta flexibilidad facilita el servicio de imágenes de fondo de mayor resolución a navegadores con mayor densidad de píxeles, como puede verse en este código:
 
      ❶ E { background-image: url('image-lores.png'); }
-     ❷ @media (min-resolution: 1.5dppx) { background-image: url('image-hires.png');
-     ❸	background-size: 100% 100%;
+     ❷ @media (min-resolution: 1.5dppx) { 
+            background-image: url('image-hires.png');
+     ❸	    background-size: 100% 100%;
      }
      
 La primera regla (❶) significa que los navegadores de dispositivos con una relación de píxeles "estándar"  (o  de baja resolución)  utilizarán la imagen estándar 
@@ -159,7 +160,7 @@ como valor un único número sin unidades que es la RPD objetivo. Por lo tanto, 
 
      @media (resolution: 1.5dppx), (resolution: 144dpi), (-webkit-device-pixel-ratio: 2) { rules }
 
-## Dispositivo Anchura y d Altura
+## Dispositivo Anchura y Altura
 
 Las propiedades de anchura y altura están relacionadas con las dimensiones de la ventana gráfica del navegador, pero ésta no siempre es tan grande como la 
 pantalla en la que se muestra. Si necesitas orientarte al tamaño físico de la pantalla en lugar del tamaño de la ventana gráfica, puedes utilizar las propiedades
@@ -195,10 +196,10 @@ de dispositivos portátiles que el usuario pueda girar fácilmente, como smartph
 Por ejemplo, puede utilizar la orientación para mostrar un menú de navegación horizontal o vertical, dependiendo de la orientación del navegador del visitante. 
 El código es el siguiente:
 
-     ul { overflow: hidden; } li { float: left; }
+     ul { overflow: hidden; } 
+     li { float: left; }
      @media (orientation: portrait) {
- 
-     li { float: none; }
+       li { float: none; }
      }
  
 Por defecto, los elementos li tienen un valor de flotación izquierda, lo que hace que se apilen horizontalmente en la página. Si la misma página se visualiza con 
@@ -260,9 +261,10 @@ de estilo.
 Los problemas surgieron porque algunos de los primeros usuarios de las consultas de medios, por ejemplo, aplicaban grandes imágenes de fondo a los elementos y 
 luego escribían reglas para ocultarlas de los dispositivos móviles:
 
-     E { background-image: url('huge-image.jpg'); } @media (max-width: 600px) {
-     E { display: none; }
-    }
+     E { background-image: url('huge-image.jpg'); } 
+     @media (max-width: 600px) {
+       E { display: none; }
+     }
     
 Pero esas imágenes de fondo, a pesar de estar ocultas, seguían siendo descargadas por el navegador y se mantenían en la caché aunque no se reprodujeran. 
 Este método aumenta el tiempo de carga de la página y consume ancho de banda, nada bueno para los usuarios de dispositivos móviles sin conexiones inalámbricas.
@@ -270,8 +272,8 @@ La forma mobile-first de crear tus páginas consiste en hacer primero una hoja d
 luego ir añadiendo progresivamente activos y funciones para usuarios con pantallas más grandes, cargados mediante una media query con la función min-width:
 
      @media (min-width: 600px) {
-     E { background-image: url('huge-image.jpg'); }
-    }
+       E { background-image: url('huge-image.jpg'); }
+     }
 
 Este cambio significa que la imagen de fondo en cuestión nunca se carga en dispositivos con pantallas más pequeñas. Este enfoque puede extrapolarse a la carga de
 hojas de estilo completas:
