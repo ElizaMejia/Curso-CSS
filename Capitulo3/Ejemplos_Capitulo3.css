@@ -1,6 +1,6 @@
 
-/*Para los ejemplos de los selectores ya existentes en CSS2 presentados en el Capitulos 3 "Selectores" se ocupara
-la siguiente lista de contactos
+/*Para los ejemplos de los selectores ya existentes en CSS2 presentados en el Capitulos 3 
+"Selectores" se ocupara la siguiente lista de contactos
 
  <ul>
      <li><a href="" lang="es-ES" rel="amigo conocido">Peter</a></li>
@@ -11,36 +11,37 @@ la siguiente lista de contactos
 
 /*Ejemplo 1: Selector de Atributos Simple
 
-Toda los elementos a en el marcado tienen un rel atributo, a pesar de tener valores diferentes, por tanto, a todos
-los elementos se les aplica la regla.*/
+Toda los elementos a en el marcado tienen un rel atributo, a pesar de tener valores diferentes, 
+por tanto, a todos los elementos se les aplica la regla, es decir de la linea 6 a la 8.*/
 
  a[rel] { color: rojo; }
 
 /*Ejemplo 2: Selector de valor de atributo exacto 
  
-Este código aplica la regla sólo al segundo a elemento en el marcado porque selecciona solo elementos que tienen el 
-valor exacto de amigo.*/
+Este código aplica la regla sólo al segundo a elemento(linea 7) en el marcado porque selecciona 
+solo elementos que tienen el valor exacto de amigo.*/
 
  a[rel='amigo'] { color: rojo; }
 
 /*Ejemplo 3: Selector de valor de atributo parcial
 
-Este código aplica la regla al primero y segundo elemento en el marcado porque selecciona todos los elementos que coincidan
-con amigo, sin importar en que pocision se encuentren*/
+Este código aplica la regla al primero y segundo elemento en el marcado porque selecciona todos 
+los elementos que coincidan con amigo(linea 6 y 7), sin importar en que pocision se encuentren*/
 
  a[rel~='amigo'] { color: rojo; }
 
 /*Ejemplo 4: Selector de atributos de idioma 
 
-Este codigo selecciona todos los elementos porque comienza con es, independientemente de los valores de su país. 
-Puede utilizar este selector para cualquier atributo con valores separados por guiones, pero en la gran mayoría 
-de los casos, serán códigos de idioma.*/
+Este codigo selecciona todos los elementos(linea de la 6 a 8) porque comienza con es, 
+independientemente de los valores de su país. Puede utilizar este selector para cualquier atributo
+con valores separados por guiones, pero en la gran mayoría de los casos, serán códigos de idioma.*/
 
  a[lang|='es'] { color: rojo; }
 
-/*------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
 
-/*Para los ejemplos de los selectores nuevos de CSS3 presentados en el Capitulo 3 se ocupara la siguiente lista 
+/*Para los ejemplos de los selectores nuevos de CSS3 presentados en el Capitulo 3 se ocupara la 
+siguiente lista 
 
  <li><a href="http://example.com/" title="Image Library">Ejemplo</a></li> 
  <li><a href="http://example.com/" title="Free Image Library">Ejemplo</a></li> 
@@ -49,8 +50,8 @@ de los casos, serán códigos de idioma.*/
 
 /*Ejemplo 5: Selector de valor de atributo de subcadena inicial
 
-En este caso, la norma se aplicará a la a elemento en el primer elemento de la lista porque el título la cadena 
-de atributos comienza con la palabra imagen.*/
+En este caso, la norma se aplicará al primer elemento de la lista(linea 46) porque el título de la 
+cadena de atributos comienza con la palabra imagen.*/
 
  a[title^='image'] {...}
 
@@ -76,8 +77,8 @@ Para este ejemplo se utiliza el siguiente codigo al cual se estaria aplicando el
 
 /*Ejemplo 6: Selector de valor de atributo de subcadena final
 
-Esta vez la regla se aplica a todos los elementos de la lista, ya que todos sus título los valores de los atributos
-terminan con la cadena biblioteca.*/
+Esta vez la regla se aplica a todos los elementos de la lista, ya que todos sus título los valores
+de los atributos terminan con la cadena biblioteca.*/
 
  a[title$='library'] {...}
 
@@ -89,8 +90,9 @@ terminan con la cadena biblioteca.*/
 
 /*Ejemplo 7: Selector de valor de atributo de subcadena arbitrario
 
-Esta regla se aplica al primer y segundo elemento de la lista porque ambos contienen la cadena de texto imagen en su
-atributo título, aunque la cadena aparezca en una posición diferente en cada ejemplo.*/
+Esta regla se aplica al primer y segundo elemento de la lista porque ambos contienen la cadena de 
+texto imagen en su atributo título, aunque la cadena aparezca en una posición diferente en cada 
+ejemplo.*/
 
  a[título*='imagen'] {...}
 
@@ -98,16 +100,17 @@ atributo título, aunque la cadena aparezca en una posición diferente en cada e
 
 Para este ejemplo se utiliza el siguiente codigo html, para ver en que caso aplica el CSS
 
- <p><a   href="http://example.com/folder1/file.pdf">Ejemplo</a></p>
+ <p><ahref="http://example.com/folder1/file.pdf">Ejemplo</a></p>
  <p><a href="http://example.com/folder2/ archivo.pdf">Ejemplo</a></p>
 
-El siguiente código de CSS busca a elementos que tienen un href atributo que comienza con http://,terminando con .pdf, y
-con /carpeta2/ contenida dentro de ella. 
+El siguiente código de CSS busca a elementos que tienen un href atributo que comienza con 
+http://,terminando con .pdf, y con /carpeta2/ contenida dentro de ella. 
 */
 
  a[href^='http://'][href*='/carpeta2/'][href$='.pdf'] {...}
 
 /*Ejemplo 9: Combinador general de hermanos
+                                                       
 Para este ejemplo se utiliza el siguiente codigo html, para ver en que caso aplica el CSS
 
  <p>Next we're going to discuss...</p> 
@@ -119,12 +122,10 @@ Para este ejemplo se utiliza el siguiente codigo html, para ver en que caso apli
  </blockquote>
  <p>However, this presumes the existence of the thinker.</p>
 
-
-El combinador de hermanos adyacentes para poner en negrita el elemento P inmediatamente adyacente al elemento h2, que se aplica 
-al codigo de la linea 115.
-El Combinador general de hermanos para poner en cursiva todos los elementos p siguientes a el elemento h2 , que se aplica a las
-lineas de codigo 115,116 y 120
-los elementos 
+El combinador de hermanos adyacentes para poner en negrita el elemento P inmediatamente adyacente
+al elemento h2, que se aplica a los elemntos de codigo de la linea 118.
+El Combinador general de hermanos para poner en cursiva todos los elementos p siguientes a el 
+elemento h2 , que se aplica a los elementos de las lineas de codigo 118,119 y 123. 
  */
 
  h2 + p {font-weight: bolder; } /* Hermano adyacente */ 
