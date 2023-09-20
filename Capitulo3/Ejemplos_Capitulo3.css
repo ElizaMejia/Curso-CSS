@@ -3,9 +3,9 @@
 "Selectores" se ocupara la siguiente lista de contactos
 
  <ul>
-     <li><a href="" lang="es-ES" rel="amigo conocido">Peter</a></li>
-     <li><a href="" lang="es-ES" rel="amigo">Pedro</a></li>
-     <li><a href="" lang="es-MX" rel="contacto">Pancho</a></li>
+     <li><a href="#" lang="es-ES" rel="amigo conocido">Peter</a></li>
+     <li><a href="#" lang="es-ES" rel="amigo">Pedro</a></li>
+     <li><a href="#" lang="es-MX" rel="contacto">Pancho</a></li>
  </ul>
 */
 
@@ -71,9 +71,9 @@ Para este ejemplo se utiliza el siguiente codigo al cual se estaria aplicando el
 
 /*Ejemplo 5.2: Selector de valor de atributo de subcadena inicial */
 
- a[href^='mail'] { imagen de fondo: url('email.svg'); } 
- a[href^='ftp'] { imagen de fondo: url('carpeta.svg'); } 
- a[href^='https'] { imagen de fondo: url('lock.svg'); }
+ a[href^='mail'] { background_image: url('email.svg'); } 
+ a[href^='ftp'] { background_image: url('carpeta.svg'); } 
+ a[href^='https'] { background_image: url('lock.svg'); }
 
 /*Ejemplo 6: Selector de valor de atributo de subcadena final
 
@@ -84,9 +84,9 @@ de los atributos terminan con la cadena biblioteca.*/
 
 /*Ejemplo 6.1: Selector de valor de atributo de subcadena final*/
 
- a[href$='.pdf'] { imagen de fondo: url('pdf.svg'); } 
- a[href$='.doc'] { imagen de fondo: url('word.svg'); } 
- a[href$='.rss'] { imagen de fondo: url('feed.svg'); }
+ a[href$='.pdf'] { background_image: url('pdf.svg'); } 
+ a[href$='.doc'] { background_image: url('word.svg'); } 
+ a[href$='.rss'] { background_image: url('feed.svg'); }
 
 /*Ejemplo 7: Selector de valor de atributo de subcadena arbitrario
 
@@ -128,5 +128,5 @@ El Combinador general de hermanos para poner en cursiva todos los elementos p si
 elemento h2 , que se aplica a los elementos de las lineas de codigo 118,119 y 123. 
  */
 
- h2 + p {font-weight: bolder; } /* Hermano adyacente */ 
- h2 ~ p { font-style: italic; } /* Hermano general */
+ h2 + p {font-weight: bolder;} /* Hermano adyacente */ 
+ h2 ~ p { font-style: italic;} /* Hermano general */
