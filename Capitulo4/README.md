@@ -162,6 +162,30 @@ al h4 elemento cuando se sigue el URI, se utiliza:
 
     #my_id:target {...}
 
+## :empty
+La pseudo-clase :empty selecciona un elemento que no tiene hijos, incluidos los nodos de texto. 
+
+## :root
+La pseudo-clase :root selecciona el primer elemento en un árbol de documentos, lo cual solo es realmente útil si agrega una hoja de estilo a documentos XML; en HTML, la raíz siempre será la HTML elemento. Una pequeña ventaja de usar :root en HTML es que puedes usarlo para darle una mayor especificidad al HTML elemento, que podría ser útil si necesita anular el selector de tipo simple
+
+## :not()
+La pseudo-clase de negación :not() selecciona todos los elementos excepto los que se dan como valor de un argumento:
+
+    E:not(F) {...}
+
+Esta regla selecciona todos los hijos del elemento E excepto los del tipo F.
+
+## UI Element States
+Los elementos relacionados con formularios y entradas del usuario pueden tener varios estados; se pueden desactivar o comprobar
+
+CSS3 tiene tres selectores de pseudoclases de estado de UI, que le permiten aplicar reglas a elementos según su estado actual:
+
+    :checked {...}
+    :disabled {...}
+    :enabled {...}
+
+
+
 
 
 
