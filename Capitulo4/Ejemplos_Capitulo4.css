@@ -1,0 +1,114 @@
+
+ /* Ejemplos de Pseudo-clases y Pseudo-elementos Capitulo 4 curso de CSS
+
+ Ejemplo 1 nth-child() y :nth-of-type(): Para el siguiente ejemplo se utilizara el siguiente codigo
+ htm al que se le aplicaran los estilos CSS
+ <div>
+     <h2>El retrato de Dorian Gray</h2>
+     <p>El artista es el creador</p>
+     <p>Revelar el arte y ocultar al artista</p> 
+     <p>El crítico es quien puede traducir</p> 
+ </div> */
+
+ p:nth-child(2n) {font-weight: bolder;} 
+ p:nth-of-type(2n) {font-weight: bolder;}
+
+
+ /* Ejemplo 2 :first-of-type, :last-child, and :last-of-type : Para el siguiente ejemplo
+ se utilizara el siguiente codigo htm al que se le aplicaran los estilos CSS
+ <div>
+     <h2>Wuthering Heights</h2>
+     <p>I have just returned...</p>
+     <p>This is certainly...</p>
+     <p>In all England...</p>
+     <h3>By Emily Bronte</h3>
+ </div> */
+
+
+ :first-child {text-decoration: underline;}
+ :last-child {font-style: italic;}
+
+  
+ /* Ejemplo 2.1 :first-of-type, :last-child, and :last-of-type :En el siguiente ejemplo se utilizara
+ el mismo html de ejemplo del Ejemplo 2, pero aplicando el siguiente CSS */
+
+
+ :first-of-type {text-decoration: underline;}
+ :last-of-type {font-style: italic;}
+
+ 
+ /* Ejemplo 3 :only-child y :only-of-type : Para el siguiente ejemplo se utilizara el 
+ siguiente codigo htm al que se le aplicaran los estilos CSS
+ <h2>On Intelligence</h2>
+ <p>Arthur C. Clarke once said:</p>
+ <blockquote>
+     <p>It has yet to be proven that intelligence has any survival value.</p>
+ </blockquote>  */
+
+
+ p:only-of-type {font-style: italic;}
+ p:only-child {text-decoration: underline;}
+
+ 
+ /* Ejemplo 4 :target : Para el siguiente ejemplo se utilizara el siguiente codigo htm 
+ al que se le aplicaran los estilos CSS
+ <div class="comment" id="comment-01">
+     <p>Thanks for this scintillating example!</p>
+     <p class="author">N.E. Boddy, April 13</p>
+ </div>
+
+ <p><a href="#comment-02">Latest comment</a></p>  */
+
+
+ .comment:target {background-color: #DDD;}
+
+
+ /* Ejemplo 5 :empty : Para el siguiente ejemplo se utilizara el siguiente codigo htm 
+ al que se le aplicaran al estilo CSS
+ 
+ <tr>
+ <td></td>
+ <td>Lorem ipsum</td>
+ <td><span></span></td>
+ </tr>  */
+
+
+ td:empty {background-color: red;}
+
+
+ /* Ejemplo 6 :empty : Para el siguiente ejemplo se utilizara el siguiente codigo html 
+ al que se le aplicaran al estilo CSS
+ 
+ html {...}  Specificity: 1; 
+ html:root {...} Specificity: 2;  */
+
+
+ html:root {background-color: black;}
+
+ 
+ /* Ejemplo 7 :not() : Para el siguiente ejemplo se utilizara el siguiente codigo html 
+ al que se le aplicaran al estilo CSS
+ 
+ <div>
+     <p>Lorem ipsum dolor sit amet...</p>
+     <p>Nunc consectetur tempor justo...</p>
+     <p>Nunc porttitor malesuada cursus...</p>
+ </div>  */
+ 
+
+ p:not(:first-child) { font-style: italic; }
+
+
+ /* Ejemplo 8 UI Element States : Para el siguiente ejemplo se utilizara el siguiente codigo html 
+ al que se le aplicaran al estilo CSS
+ 
+ <form action="">
+     <fieldset>
+         <legend>UI element state pseudo-classes</legend>
+         <input type="text" value="Lorem ipsum" disabled>
+         <input type="text" value="Lorem ipsum">
+     </fieldset>
+ </form>   */
+
+ input[type='text']:disabled {border: 1px dotted gray;}
+ input[type='text']:enabled {border: 1px solid black;}
