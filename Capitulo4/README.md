@@ -125,22 +125,38 @@ La diferencia se revela en los ejemplos posteriores: en 3, :nth-child(2n) selecc
 hermanos pero solo cuando esos elementos son pares. 
 En (4),en comparación, :nth-of-type(2n) selecciona todos los elementos pares del tipo E de un recuento que incluye sólo esos elementos.
 
-## :nth-last-child() and :nth-last-of-type()
+**Resultado del Ejemplo 1, del archivo "Ejemplos_Capitulo4" anexado en la carpeta "Capitulo 4" del presente repositorio**
+
+![Imagen ilustrando el capitulo 4](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo4/Imagenes/Ejemplo%201_C4.png)
+
+## :nth-last-child() y :nth-last-of-type()
 
 El :nth-last-child() y :nth-last-of-type() pseudo-clases aceptan la mismos argumentos que :nth-child() y :nth-of-type(),excepto que se cuentan desde el
 último elemento, trabajando a la inversa. 
 
 
-## :first-of-type, :last-child, and :last-of-type
+## :first-of-type, :last-child, y :last-of-type
 
 :first-of-type es más específico y se aplica solo al elemento que es el primer hijo del tipo nombrado de su padre. También está disponible un par de 
 pseudo-clases homólogas, :last-child and :last-of-type, que como habrás adivinado, selecciona el último elemento hijo o el último elemento hijo de ese tipo,
 respectivamente, del padre.
 
-## :only-child and :only-of-type
+**Resultado del Ejemplo 2, del archivo "Ejemplos_Capitulo4" anexado en la carpeta "Capitulo 4" del presente repositorio**
+
+![Imagen ilustrando el capitulo 4](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo4/Imagenes/Ejemplo%202_C4.png)
+
+**Resultado del Ejemplo 2.1, del archivo "Ejemplos_Capitulo4" anexado en la carpeta "Capitulo 4" del presente repositorio**
+
+![Imagen ilustrando el capitulo 4](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo4/Imagenes/Ejemplo2.1_C4%20.png)
+
+## :only-child y :only-of-type
 
 Estas dos pseudo-clases se utilizan para seleccionar elementos en el árbol del documento que tienen un padre pero no tienen elementos hermanos (:only-child)
 o ningún hermano del mismo tipo (:only-of-type). Como ocurre con muchas de las pseudo-clases anteriores, estas dos se superponen sustancialmente en función.
+
+**Resultado del Ejemplo 3, del archivo "Ejemplos_Capitulo4" anexado en la carpeta "Capitulo 4" del presente repositorio**
+
+![Imagen ilustrando el capitulo 4](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo4/Imagenes/Ejemplo3_C4.png)
 
 # otras pseudoclases
 Además de las pseudo-clases estructurales analizadas hasta ahora en este capítulo, CSS3 introduce una serie de pseudo-clases que le permiten seleccionar 
@@ -185,8 +201,52 @@ CSS3 tiene tres selectores de pseudoclases de estado de UI, que le permiten apli
     :enabled {...}
 
 
+**Resultado del Ejemplo 8, del archivo "Ejemplos_Capitulo4" anexado en la carpeta "Capitulo 4" del presente repositorio**
 
+![Imagen ilustrando el capitulo 4](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo4/Imagenes/ejemplo8_C4.png)
 
+## Pseudoclases de validación de restricciones
+Bajo la validación de restricciones, un campo de formulario puede hacerse obligatorio mediante el uso del nuevo required atributo:
+
+    <input type="text" required>
+    
+Puedes diseñar elementos dependiendo de si son obligatorios u opcionales usando sus pseudoclases homónimas:
+
+    :required {...}
+    :optional {...}
+
+Cada campo del formulario puede estar en uno de dos estados de validación: válido o no válido. Si no se aplican restricciones específicas, ni por parte del navegador ni del autor, un campo de formulario es válido de forma predeterminada. Como antes, cada estado tiene una pseudoclase homónima:
+
+    :valid {...}
+    :invalid {...}
+    
+Finalmente, algunos elementos HTML5 pueden tener un rango de valores permitido, establecido mediante el mín y máximo atributos. Puede diseñar estos elementos dependiendo de si el valor actual está dentro o fuera del rango usando, una vez más, un par de pseudo-clases homónimas:
+
+    :in-range {...}
+    :out-of-range {...}
+
+# Pseudo elementos
+
+Al igual que las pseudo-clases, los pseudo-elementos proporcionan información que no se especifica en el árbol del documento. Pero mientras que las pseudo-clases utilizan condiciones "fantasmas", como la posición de un elemento en el árbol o su estado, los pseudo-elementos van más allá y le permiten aplicar estilos a elementos que no existen en absoluto en el árbol.
+
+En CSS2, los cuatro pseudo-elementos son :first-line y :first-letter, que seleccionan subelementos en nodos de texto, y  :after and :before, que le permiten aplicar estilos al principio y al final de elementos existentes. CSS3 no introduce ningún pseudo-elemento nuevo, pero refina ligeramente las definiciones e introduce una nueva sintaxis para diferenciarlas de las pseudo-clases. En CSS3, los pseudoelementos tienen el prefijo dos puntos dobles (::), así:
+
+    ::first-line {...}
+    ::first-letter {...}
+    ::after {...}
+    ::before {...}
+
+## El pseudo-elemento ::selection
+
+Las primeras versiones del módulo Selectores CSS3 incluían la definición de un ::selection pseudo-elemento. Aunque se eliminó formalmente del módulo, se ha implementado bien en los navegadores de escritorio (menos en los navegadores móviles). ::selection se utiliza para aplicar reglas a un elemento que el usuario ha seleccionado en el navegador (por ejemplo, una parte de un nodo de texto):
+
+     ::selection {...}
+Sólo se puede aplicar un número limitado de propiedades ::selection : color, background-color y background shorthand (aunque no background-image). Usando ::selection, es posible hacer algo como:
+
+    p::selection {
+        background-color: black;
+        color: white;
+    }
 
 
 
