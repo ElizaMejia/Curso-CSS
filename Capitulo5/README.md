@@ -54,7 +54,8 @@ todos h1 elementos con un clase de fuente web. Para ver cómo se muestra, aquí 
      <h1>Alas, poor Yorick!</h1>
      <h1 class="webfont">Alas, poor Yorick!</h1>
    
-# AQUI VA IMAGEN 1
+![Imagen 1 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen1_C5.png)
+
      
 ## Definiendo diferentes Faces
 
@@ -81,7 +82,8 @@ marcado:
      <h1>I knew him, Horatio</h1>
      <h1><em>I knew him, Horatio</em></h1>
 
-# AQUI VA IMAGEN 2
+![Imagen 2 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen2_C5.png)
+
 Puede definir cualquier número de variaciones de una fuente con este método utilizando diferentes propiedades de fuente en @font-face regla: 
 Font-weight para establecer varios weights ,font-variant para versalitas, etc.
 
@@ -101,7 +103,9 @@ ilustración de cómo no para definir un peso en cursiva:
             font-family: 'Gentium Basic', sans-serif;
             font-style: italic;
      }
-# AQUI VA IMAGEN 3
+
+![Imagen 3 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen3_C5.png)
+
 Puedes ver que el @font-face la regla utiliza la cara normal de la fuente Gentium Basic, pero el elemento h1 tiene un estilo en cursiva declarado.
 Como puede ver, los dos ejemplos son bastante diferentes. La primera es la fuente Gentium Basic seleccionada inclinada para simular un estilo de cursiva
 (usando el primer ejemplo de código); las letas son más grandes, ligeramente distorsionados y espaciados de manera inconsistente. La segunda es la
@@ -176,7 +180,10 @@ propia forma de incluir las fuentes con licencia en su sitio, generalmente media
 
 ## Un ejemplo de fuentes web del mundo real
 
-# AQUI VA IMAGEN 4
+En la imagen inferior se muestran los resultados del "Ejemplo_Capitulo5. css" que esta cargado en en presente repositorio
+
+![Imagen 4 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen4_C5.png)
+
 En el ejemplo de la derecha, mezclé tres familias de fuentes bastante distintivas; muchos diseñadores probablemente le dirán que mezclar no es una buena 
 idea en un sitio de producción, pero funciona bien para ilustrar mi punto. Independientemente de lo que piense sobre mis opciones de fuente, espero que al
 menos esté de acuerdo en que el texto se ve más dinámico y atractivo con esas opciones aplicadas.
@@ -220,3 +227,52 @@ que puedes ver en este marcado:
 La primera h1 se representa en la fuente predeterminada Helvetica Neue, el segundo en Impact y el tercero también en Impact pero con el font-size-adjust
 propiedad aplicada usando el valor 0,517, que es la altura x de Helvetica Neue. 
 
+![Imagen 5 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen5_C5.png)
+
+Se puede ver claramente la diferencia entre las fuentes Helvetica Neue (primera línea) e Impact (segunda línea) en las dos primeras h1 elementos. (Por supuesto, es poco probable que alguna vez uses estas dos en la misma pila de fuentes, pero debido a que tienen alturas x bastante diferentes, son buenas para fines ilustrativos). 
+
+
+### font-stretch
+
+Algunas familias de fuentes contienen variantes condensadas o expandidas, y estiramiento de fuente. La propiedad permite el acceso a estos. Es está la sintaxis:
+
+
+     E { font-stretch: keyword; }
+
+Según la especificación, el valor de la palabra clave puede ser cualquiera de la siguiente: normal (el valor por defecto),ultracondensada, extracondensada, condensada, semicondensada, semiexpandida, expandida, extraexpandida y ultra expandido. Cada palabra clave se relaciona con una variante de fuente dentro de una familia, como Frutiger Condensed o Nova Ultra Expanded.
+En el siguiente ejemplo, uso estiramiento de fuente para mostrar dos caras diferentes de la fuente PT Sans, usando el siguiente código:
+
+     h1 { font-family: 'PT Sans', sans-serif; }
+     h1.narrow { font-stretch: condensed; }
+
+El elemento h1 se muestra dos veces, ambas veces usando la fuente PT Sans.
+En el segundo caso, he usado el estiramiento de fuente propiedad con el valor condensado,que le indica al navegador que muestre la cara PT Sans Condensed.
+
+ ![Imagen 6 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen6_C5.png)
+
+## Características De Tipo Abierto
+
+Los formatos de fuente OpenType son capaces de hacer mucho más que variaciones de tamaño o peso; tienen una variedad de ligaduras, caracteres decorativos, caracteres numéricos especiales y mucho más. 
+
+Muchos navegadores han implementado una propiedad que le permite explorar las funciones adicionales que ofrece OpenType y otros formatos similares. La nueva propiedad 
+se llama configuración de características de fuente,y aquí está su sintaxis:
+
+     E { font-feature-settings: "parameters"; }
+ 
+El valor parameters es una serie de cadenas que contienen códigos abreviados para cada característica de fuente, además de un valor binario opcional para habilitar 
+o deshabilitar la característica. He aquí un ejemplo:
+
+     E { font-feature-settings: "dlig" on; }
+ 
+El primer parámetro es diligencia, el código corto para ligaduras discrecionales, más el valor de e para mostrar que se está habilitando; el estado predeterminado es activado, por lo que puede omitir ese valor de manera segura en este ejemplo.
+Si desea desactivar una función, utilice el valor binario alternativo, apagado; En el siguiente ejemplo, deshabilito la función OpenType de versalitas:
+
+     E { font-feature-settings: "smcp" off; }
+ 
+Se puede tener más de un parámetro; simplemente cree una lista separada por comas. El siguiente ejemplo habilita ligaduras comunes y deshabilita números tabulares:
+
+     E { font-feature-settings: "liga", "tnum" off; }
+
+En la imagen inferior se muestra el resultado del "Ejemplo 2 Características De Tipo Abierto" del archivo "Ejemplos_Capitulo5.css" cargado en el presente repositorio
+
+![Imagen 7 ilustrando el capitulo 5](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo5/Imagenes/Imagen7_C5.png)
