@@ -1,0 +1,56 @@
+
+/*Ejemplos de Fuentes web Capitulo 5 curso de CSS
+
+ Ejemplo 1 Un ejemplo de fuentes web del mundo real: Para el siguiente ejemplo se utilizara el siguiente codigo
+ htm al que se le aplicaran los estilos CSS
+ 
+<h1>Great Expectations</h1>
+<h2>By Charles Dickens</h2>
+<p>My father's family name being <em>Pirrip</em>, and my Christian name
+<em>Philip</em>, my infant tongue could make of both names nothing longer or more explicit than <strong>Pip</strong>. 
+So, I called myself <strong>Pip
+</strong>, and came to be called <strong>Pip</strong>.</p>
+ */
+
+
+@font-face {
+    font-family: 'CartoonistHand';
+    src: url('CartoonistHand.woff') format('woff');
+}
+@font-face {
+    font-family: 'CartoonistHand';
+    font-style: italic;
+    src: url('CartoonistHand-Italic.woff') format('woff');
+}
+@font-face {
+    font-family: 'CartoonistHand';
+    font-weight: bold;
+    src: url('CartoonistHand-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('Chunkfive.woff') format('woff');
+}
+@font-face {
+    font-family: 'AirstreamRegular';
+    src: url('Airstream.woff') format('woff');
+}
+.font-face h1 { font-family: ChunkFiveRegular, sans-serif; }
+.font-face h2 { font-family: AirstreamRegular, cursive; }
+.font-face p { font-family: CartoonistHand, sans-serif; }
+
+/*
+Ejemplo 2 Características De Tipo Abierto: Para el siguiente ejemplo se utilizara el siguiente codigo
+ htm al que se le aplicaran los estilos CSS
+ */
+
+.lig-none { font-feature-settings: "liga" off; }
+.lig-common { font-feature-settings: "liga"; }
+.lig-disc { font-feature-settings: "dlig"; }
+
+/*Este código se aplica a tres h1 elementos. El primero tiene la cadena
+de parámetro "liga" apagada,por lo que las ligaduras comunes están 
+deshabilitadas. El segundo usa la misma cadena de parámetros excepto 
+sin el apagado valor, por lo que se habilitan las ligaduras comunes. 
+El tercero tiene la cadena "dlig",lo que permite ligaduras 
+discrecionales.*/
