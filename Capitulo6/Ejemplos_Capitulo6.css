@@ -1,0 +1,68 @@
+/* Ejemplos de Tipos de Tipografías y Efectos Capitulo 6 del curso de 
+CSS */
+
+/* Ejemplo 1: sombra paralela gris (código hexadecimal #BBB) ubicada a
+3 píxeles a la derecha y 3 píxeles hacia abajo del texto original:*/
+
+h1 { text-shadow: 3px 3px #BBB; }
+
+/*Ejemplo 2: .one usa valores negativos para ambos ejes, por lo que la 
+sombra se representa arriba y a la izquierda del texto. 
+.two utiliza un valor negativo para el eje X y un valor positivo para 
+el eje Y, por lo que la sombra se representa debajo y hacia la izquierda. 
+. three tiene un valor negativo para el eje X y un valor de 0 para el
+eje Y, por lo que la sombra se representa hacia la izquierda y en la 
+misma línea base.*/
+
+.one { text-shadow: -3px -3px #BBB; } 
+.two { text-shadow: -5px 3px #BBB; } 
+.three { text-shadow: -5px 0 #BBB; }
+
+/*Ejemplo 3: .one establece los mismos valores de desplazamiento que 
+en el Ejemplo 2, pero con un radio de desenfoque de 3px. El resultado 
+es una sombra mucho más suave y “natural”. 
+En .two, establece valores 0 para los desplazamientos y un radio de 
+desenfoque de 3 píxeles, haciendo coincidir el texto con el fondo y 
+creando la ilusión de que el texto está elevado.*/
+
+.one { text-shadow: 3px 3px 3px #BBB; }
+.two { text-shadow: 0 0 3px #000; }
+
+/*Ejemplo 4: Multiples Sombras*/
+.one {
+       text-shadow:
+       0 -2px 3px #FFF,
+       0 -4px 3px #AAA,
+       0 -6px 6px #666,
+       0 -8px 9px #000;
+     }
+ .two {
+       color: #FFF;
+       text-shadow:
+       0 2px rgba(0,0,0,0.4),
+       0 4px rgba(0,0,0,0.4),
+       0 6px rgba(0,0,0,0.4),
+       0 8px 0 rgba(0,0,0,0.4);
+      }
+
+/*Ejemplo 5: Restringir el desbordamiento*/
+ p  {
+       overflow: hidden; 
+       text-overflow: ellipsis; 
+       white-space: nowrap;
+    }
+/*Ejemplo 6: Alinear texto*/
+ p  {
+       text-align: justify; text-align-last: right;
+    }
+
+/*Ejemplo 7: Control de envoltura de línea, si se quiere permitir que las
+palabras largas se ajusten en lugar de desbordar el elemento que las 
+contiene*/
+
+p.break { word-wrap: break-word; }
+
+/*Ejemplo 8: Cambiar el tamaño de los elementos */
+ p  {
+        overflow: hidden; resize: both;
+    }
