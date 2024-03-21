@@ -1,0 +1,39 @@
+/* Ejemplos de Múltiples columnas Capitulo 7 del curso de CSS */
+
+/*Ejemplo 1: Columnas prescriptivas: recuento de columnas*/
+
+div[class*='-2'] { column-count: 2; }
+div[class*='-3'] { column-count: 3; }
+
+/*Ejemplo 2: Columnas dinámicas: ancho de columna*/
+
+.columns {
+            column-width: 150px;
+            width: 710px;
+         }  
+        
+/*Ejemplo 3:Combinando recuento de columnas y ancho de columnas */
+
+.columns {
+            column-count: 3;
+            column-width: 150px;
+         }
+
+/*Ejemplo 4:Espacios y reglas de columnas*/
+
+div {
+       column-rule-color: silver;
+       column-rule-style: double;
+       column-rule-width: 0.3em;
+    }
+
+/*Ejemplo 5:Espacios y reglas de columnas*/
+
+.columns {
+             column-count: 3;
+             column-gap: 2em;
+             column-rule: 0.3em double silver;
+         }
+
+
+
