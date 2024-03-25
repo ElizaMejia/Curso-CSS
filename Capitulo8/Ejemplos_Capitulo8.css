@@ -1,0 +1,61 @@
+/* Ejemplos de Background Images Capitulo 8 del curso de CSS */
+
+/*Ejemplo 1: Background-repeat*/
+
+.space { background-repeat: space; }
+.round { background-repeat: round; }
+
+/*Ejemplo 2: Múltiples imágenes de fondo*/
+
+h2 {
+     background-image: url('monkey.svg'), url('landscape.jpg');
+     background-position: 95% 85%, 50% 50%;
+     background-repeat: no-repeat;
+   }
+/* Mismo resultado otra manera diferente de hacerlo, separando por comas*/
+
+h2 {
+     background:
+     url('monkey.svg') no-repeat 95% 85%,
+     url('landscape.jpg') no-repeat 50% 50%;
+   }
+
+/*Ejemplo 3: Imágenes de fondo escaladas dinámicamente*/
+
+h2 {
+    background:
+        url('monkey.svg') no-repeat 95% 85%,
+        url('monkey.svg') no-repeat 50% 80%,
+        url('monkey.svg') no-repeat 10% 100%,
+        url('landscape.jpg') no-repeat 50% 50%;
+    background-size: auto 80%, auto 15%, auto 50%, auto;
+   }
+
+/*Ejemplo 3.1: Imágenes de fondo escaladas dinámicamente*/
+.monkey-1, .monkey-2 {
+                         background-image: url('monkey.svg');
+                         background-position: 50% 50%;
+                     }
+    
+.monkey-1 { background-size: contain; }
+.monkey-2 { background-size: cover; }
+
+/*Ejemplo 4: Clip de fondo y origen*/
+
+h2 {
+    background: url('landscape.jpg') no-repeat 50% 50% #EFEFEF;
+    border-width: 20px;
+    padding: 20px;
+   }
+
+h2.brdr { background-clip: border-box; }
+h2.pddng { background-clip: padding-box; }
+h2.cntnt { background-clip: content-box; }
+
+/*Ejemplo 4.1: Clip de fondo y origen*/
+
+h2 { background: url('monkey.svg') no-repeat 0 100%;}
+h2.brdr { background-origin: border-box; }
+h2.cntnt { background-origin: content-box; }
+h2.pddng { background-origin: padding-box; }
+
