@@ -27,6 +27,6 @@ En el presente repositorio se mostrara por capitulos el desarrollo del curso, el
 
 [Capitulo 8](https://github.com/ElizaMejia/Curso-CSS/tree/Capitulo8)
 
-[Capitulo 5](https://github.com/ElizaMejia/Curso-CSS/tree/Capitulo9)
+[Capitulo 9](https://github.com/ElizaMejia/Curso-CSS/tree/Capitulo9)
 
 
