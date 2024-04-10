@@ -1,0 +1,44 @@
+/* Ejemplos de Color y Opacidad Capitulo 10 del curso de CSS */
+
+
+/*Ejemplo 1: La propiedad de opacidad*/
+<div class="parent">
+    <div class="child">
+        <p>...</p>
+    </div>
+</div>
+
+.parent { background-color: black; }
+.child { background-color: white; }
+.child.semi-opaque-1 { opacity: 0.66; }
+.child.semi-opaque-2 { opacity: 0.33; }
+
+/*Ejemplo 2: El canal alfa*/
+<div class="box">
+    <div class="text">
+        <h1>...</h1>
+    </div>
+</div>
+
+.box { background-image: url('monkey.svg'); }
+.text { background-color: white; }
+.opacity { opacity: 0.5; }
+.rgba { background-color: rgba(255,255,255,0.5); }
+
+/*Ejemplo 2.1: El canal alfa*/
+.shadow .text { box-shadow: 10px 10px 4px rgba(0,0,0,0.7); } 
+.border .text { border: 10px solid rgba(0,0,0,0.5); } 
+.text-semi p { color: rgba(0,0,0,0.6); }
+x.text-shadow p { text-shadow: 5px 5px 1px rgba(0,0,0,0.6); }
+
+/*Ejemplo 3: La variable de color: color actual*/
+
+<h2>The Central Intelligence Agency (<abbr>CIA</abbr>).</h2>
+<h2 class="ccolor">The Federal Bureau of Investigation (<abbr>FBI</abbr>)</h2>
+
+h2 { color: black; }
+.ccolor {
+           background-color: black;
+           color: white;
+        }
+h2 abbr { border-bottom: 6px double currentColor; }
