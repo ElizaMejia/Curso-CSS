@@ -1,0 +1,57 @@
+/* Ejemplos de Color y Opacidad Capitulo 10 del curso de CSS */
+
+
+/*Ejemplo 1: Configuración de la dirección del degradado*/
+
+E { background-image: linear-gradient(to left, black, white); }
+E { background-image: linear-gradient(to top right, black, white); } 
+E { background-image: linear-gradient(120deg, black, white); }
+
+/*Ejemplo 2: Agregar valores adicionales de parada de color*/
+
+div { background-image: linear-gradient(to right, black, white 75%); }
+div { background-image: linear-gradient(to right, black 50%, white); }
+div { background-image: linear-gradient(to right, black, white 50%, black 1px); }
+
+/*Ejemplo 3: Repetición de degradados lineales*/
+
+.gradient-1 {
+               background-image: repeating-linear-gradient(to left, black, white, black 25%);
+            } 
+        
+.gradient-2 {
+               background-image: repeating-linear-gradient(45deg, black, white 2px, black 10px);
+            }
+
+.gradient-3 {
+               background-image: repeating-linear-gradient(315deg, black, black 2px, white 2px, white 4px);
+            }
+
+/*Ejemplo 4: Usando gradientes radiales*/
+
+.ext1 { background-image: radial-gradient(closest-corner circle at 10% 60%, white, black); } 
+.ext2 { background-image: radial-gradient(closest-side circle at 10% 60%, white, black); } 
+.ext3 { background-image: radial-gradient(farthest-corner circle at 0% 100%, white, black,white, black); }
+.ext4 { background-image: radial-gradient(farthest-side circle at 0% 100%, white, black,white, black); }
+
+/*Ejemplo 5: Usando gradientes radiales*/
+
+.gradient-1 { background-image:repeating-radial-gradient(circle farthest-corner at right top,black, white 10%, black 15%); }
+.gradient-2 { background-image:repeating-radial-gradient(circle farthest-corner at left,white, white 10px, black 15px);}
+.gradient-3 { background-image:repeating-radial-gradient(circle farthest-corner, white,black 1px, white 2px); }
+
+
+/*Ejemplo 6: Múltiples gradientes*/
+
+.linears {
+            background-image:
+                              linear-gradient(to right bottom, black, white 50%, transparent 50%),
+                              linear-gradient(to left bottom, black, white 50%, black 50%);
+         }
+         
+.radials {
+            background-image:
+                              radial-gradient(closest-side circle at 20% 50%, white, black 95%, transparent),
+                              radial-gradient(closest-side circle at 50% 50%, white, black 95%, transparent),
+                              radial-gradient(closest-side circle at 80% 50%, white, black 95%, transparent);
+         }
