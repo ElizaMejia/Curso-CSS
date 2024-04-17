@@ -1,0 +1,37 @@
+/* Ejemplos de Transiciones y Animaciones 11 del curso de CSS */
+
+/*Ejemplo 1: Transiciones*/
+
+h1 {
+    font-size: 150%;
+    transition: font-size 2s ease-out 250ms;
+   }
+h1:hover { font-size: 600%; }
+
+
+/*Ejemplo 1: Transiciones Multiples*/
+.widget {
+           background-color: black;
+           left: 10%;
+           top: 60%;
+           transition: background-color 4s linear, left 2s ease-in-out, top 2s ease-in-out;
+        }
+div:hover .widget {
+                      background-color: silver;
+                      left: 75%;
+                      top: 10%;
+                  }
+
+/*Ejemplo 3: Animaciones*/
+@keyframes expand {
+                      0% { border-width: 4px; } 
+                      50% { border-width: 12px; } 
+                      100% {
+                              border-width: 4px;
+                              height: 100%;
+                              width: 100%;
+                           } 
+                  }
+div {   
+        animation: expand 6s ease 0 infinite alternate;
+    }
