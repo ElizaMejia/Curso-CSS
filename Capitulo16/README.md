@@ -94,3 +94,81 @@ También puedes usar anidados.calcular()funciones para lograr el mismo resultado
      E { border-width: calc(1em*10); } /* Invalid */ 
      E { border-width: calc(1em * 10); } /* Valid */
 
+## Elementos de dimensionamiento
+
+El tamaño de un elemento generalmente se establece usando el ancho o altura propiedades o sus máximo -y mín.-variantes, junto con un absoluto (píxeles),relativo (ellos),o valor porcentual. 
+CSS3 introduce nuevas propiedades y valores destinados a proporcionar mayor flexibilidad adicional a través de una alternancia de modelo de caja y nuevos métodos de tamaño según el contenido.
+
+## Tamaño de la caja
+
+Durante muchos años, Internet Explorer implementó su modelo de caja en contravención de las especificaciones del W3C. El modelo del W3C dictaminó que el ancho El valor era el ancho del cuadro de contenido y que el relleno y los bordes eran adicionales. En el modelo de IE, por otro lado, el ancho el valor era igual al ancho total del elemento, incluido el relleno y los bordes. Considere estas reglas de estilo:
+
+     E{
+          border: 5px;
+          padding: 10px;
+          width: 100px;
+      }
+
+En el modelo IE, el cuadro de contenido tendría 70 px de ancho, mientras que en el modelo W3C, tendría 100 px completos.
+Aunque el modelo estándar es más lógico, en ocasiones el modelo IE es más cómodo de utilizar. En CSS3, puede optar por utilizar el modelo IE con el tamaño de caja propiedad,la sintaxis es la siguiente:
+
+     E { box-sizing: keyword; }
+
+La palabra clave predeterminada es cuadro de contenido,lo que significa aplicar lo especificado ancho o alturaal cuadro de contenido únicamente, como en el modelo W3C. Por el contrario, el valor alternativo cuadro de borde significa que cualquier longitud especificada también debe incluir cualquier relleno y cuadros de borde.
+
+La imagen inferior muestra la diferencia. El ejemplo superior utiliza el modelo de caja W3C, mientras que el inferior tiene el cuadro de borde valor aplicado. Como puede ver, el ancho total del ejemplo inferior es igual al cuadro de contenido del superior.
+
+![Imagen 1 ilustrando el capitulo 16](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo16/Imagenes/C16/Imagen1_C16.png)
+
+## Dimensionamiento intrínseco y extrínseco
+
+Un desafío en el diseño web es que los elementos ignoran su contenido y el contexto en el que se utilizan; en otras palabras, sin JavaScript, un elemento no conoce las dimensiones de sus elementos secundarios o principales. CSS3 introduce un nuevo concepto que cambia un poco esa ecuación con la adición de intrínseco y extrínseco dimensionamiento. El tamaño intrínseco se basa en los elementos secundarios de un elemento y el tamaño extrínseco se basa en el tamaño del elemento principal.
+
+Todos los modelos de tamaño intrínsecos y extrínsecos se aplican utilizando un valor de palabra clave en el ancho o altura propiedades (y sus min-ymax- variantes). Por ejemplo, esta lista muestra cómo se aplicaría un nuevo modelo de tamaño aancho:
+
+     E { width: keyword; }
+
+## Contenido máximo y contenido mínimo
+
+Los primeros valores de palabras clave nuevos,contenido máximo y contenido mínimo,son valores intrínsecos que hacen que un elemento sea tan ancho o tan alto como el más grande (contenido máximo) o más pequeño (contenido mínimo)elemento de contenido (en texto, el ancho de la palabra más larga) que contiene. Considere este marcado de un imagen y pag elemento dentro de un contenedor div:
+
+     <div>
+           <img src="foo.png"> 
+           <p>...</p>
+     </div>
+     
+El elemento img tiene un ancho de 200px y el ancho del pages 300px. Si el div elemento tenía un ancho valor de contenido máximo, sería lo suficientemente ancho para contener el pag,y si tuviera un valor de contenido mínimo,sería lo suficientemente ancho para caber en el imagen y el texto en el pag envolvería.
+
+Compare los resultados que se muestran en la imagen inferior, el elemento contenedor de la izquierda tiene elcontenido máximo valor aplicado, lo que lo hace tan ancho como el child más ancho (elpag),mientras que el de la derecha tiene contenido mínimo aplicado, lo que lo hace tan ancho como el child más estrecho (el imagen).
+
+![Imagen 2 ilustrando el capitulo 16](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo16/Imagenes/C16/Imagen2_C16.png)
+
+# Contenido adecuado
+
+El siguiente valor de palabra clave intrínseco es potencialmente el más útil. Llamado contenido adecuado,dimensiona un elemento tal como lo hacen los elementos flotantes o las celdas de una tabla: un elemento se expandirá hasta ser lo suficientemente ancho como para contener su contenido, a menos que se alcance el ancho máximo del elemento, en cuyo caso, el contenido se ajustará.
+
+En la imagen inferior se compara el efecto de contenido adecuado a contenido máximo y contenido mínimo.El cuadro en la parte superior izquierda tiene contenido adecuadose aplica y el contenido se ajusta cuando alcanza el límite del contenedor principal. Por el contrario, el cuadro en la parte superior derecha tiene contenido máximo aplicado, por lo que debería expandirse para adaptarse a su contenido; sin embargo, el cuadro ahora excede el ancho de su contenedor principal, que tiene un Desbordamiento valor de oculto,lo que significa que la caja está recortada.
+El cuadro en la parte inferior izquierda también tiene contenido adecuado aplicado, por lo que el contenedor cambia de tamaño para adaptarse al ancho del contenido; el cuadro en la parte inferior derecha tiene contenido mínimo aplicado, por lo que el contenedor es sólo tan ancho como el imagen elemento y el contenido del texto se ajusta.
+
+![Imagen 3 ilustrando el capitulo 16](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo16/Imagenes/C16/Imagen3_C16.png)
+ 
+## Llenar
+
+La palabra clave final en la especificación se llama llenar. (Pero en Firefox es disponible y en Chrome es relleno disponible!)Este valor extrínseco hace que un elemento llene todo el espacio disponible a lo largo de la altura o el ancho de su padre.
+Digamos que quieres hacer un bloque en línea pag el elemento, con borde y relleno, se expande para ser tan ancho como su padre. Generalmente, aplicarías estas reglas:
+
+     p{
+          border-width: 0 0.5em; 
+          display: inline-block; 
+          padding: 0 1em;
+          width: 100%;
+      }
+
+  
+Sin embargo, como sabes, el ancho "real" de un elemento también incluye relleno y borde, por lo que, en este caso, el pag elemento desbordaría su padre. Una solución es utilizar el tamaño de caja propiedad, pero es posible que tenga buenas razones para mantener el modelo de caja estándar, por lo que una mejor alternativa es usar el tamaño intrínseco:
+
+      p { width: fill; }
+
+El resultado se muestra en la imagen inferior; el elemento de bloque en línea, con borde y relleno, cambia de tamaño para llenar el espacio disponible en su elemento principal.
+
+![Imagen 4 ilustrando el capitulo 16](https://github.com/ElizaMejia/Curso-CSS/blob/Capitulo16/Imagenes/C16/Imagen4_C16.png)
